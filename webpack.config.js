@@ -22,12 +22,16 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader', 'eslint-loader']
       },
+      {
+        test: /\.(png|woff(2)?|svg)$/,
+        loader: 'url-loader?limit=100000'
+      },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'The Web and Mobile Club',
-      //favicon: __dirname + './images/favicon.ico',
+      favicon: __dirname + '/src/images/favicon.ico',
       minify: {
         collapseWhitespace: true,
         removeComments: true,

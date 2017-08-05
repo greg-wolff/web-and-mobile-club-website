@@ -1,1 +1,250 @@
-body {}
+@import 'css/reset.css';
+@font-face {
+  font-family: 'Bariol';
+  font-weight: bold;
+  font-style: normal;
+  src: url('fonts/bariol_bold-webfont.woff2'), url('fonts/bariol_bold-webfont.woff');
+}
+@font-face {
+  font-family: 'Bariol';
+  font-weight: bold;
+  font-style: italic;
+  src: url('fonts/bariol_bold_italic-webfont.woff2') format('woff2'), url('fonts/bariol_bold_italic-webfont.woff') format('woff');
+}
+@font-face {
+  font-family: 'Bariol';
+  font-weight: 100;
+  font-style: normal;
+  src: url('fonts/bariol_light-webfont.woff2') format('woff2'), url('fonts/bariol_light-webfont.woff') format('woff');
+}
+@font-face {
+  font-family: 'Bariol';
+  font-weight: 100;
+  font-style: italic;
+  src: url('fonts/bariol_light_italic-webfont.woff2') format('woff2'), url('fonts/bariol_light_italic-webfont.woff') format('woff');
+}
+@font-face {
+  font-family: 'Bariol';
+  font-weight: normal;
+  font-style: normal;
+  src: url('fonts/bariol_regular-webfont.woff2') format('woff2'), url('fonts/bariol_regular-webfont.woff') format('woff');
+}
+@font-face {
+  font-family: 'Bariol';
+  font-weight: normal;
+  font-style: italic;
+  src: url('fonts/bariol_regular_italic-webfont.woff2') format('woff2'), url('fonts/bariol_regular_italic-webfont.woff') format('woff');
+}
+$font-stack: 'Bariol', Helvetica, sans-serif;
+$black: #4D4D4D;
+$gray: #939393;
+$white: #AAAAAA;
+$logo-blue: #8FACFD;
+$logo-yellow: #8FACFD;
+$logo-red: #8FACFD;
+$br-small: 640px;
+$br-medium: 900px;
+
+body {
+  font: 16px/1.6 $font-stack;
+  @media (min-width: $br-small) {
+    font-size: 1.25rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $black;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 2.4em;
+  line-height: 1.02;
+  @media (min-width: $br-small) {
+    font-size: 3em;
+  }
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+h4 {
+  font-style: italic;
+  font-size: 1em;
+}
+
+h5 {
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+  color: $logo-blue;
+  box-shadow: inset 0 -9px 0 0 lighten($logo-blue, 18%);
+  transition: color 0.5s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    color: lighten($logo-blue, 8%);
+    box-shadow: inset 0 -15px 0 0 lighten($logo-blue, 30%);
+  }
+
+  &:active {
+    color: darken($logo-blue, 10%);
+  }
+}
+
+.nav-link {
+  color: $black;
+  box-shadow: none;
+  font-weight: bold;
+  text-transform: lowercase;
+
+  &:hover {
+    color: lighten($black, 14%);
+    box-shadow: none;
+  }
+}
+
+p {
+  color: $gray;
+}
+
+main {
+  width: 70%;
+  margin: 0 auto;
+  @media (max-width: $br-small) {
+    width: 80%;
+  }
+}
+
+header {
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  > a:last-child {
+    padding-right: 0;
+  }
+
+  ul {
+    li {
+      font-size: 0.9em;
+      display: inline-block;
+
+      &:last-child a {
+        padding-right: 0;
+      }
+
+      a {
+        @extend .nav-link;
+        padding: 10px 31px;
+      }
+    }
+  }
+}
+
+.mobile-nav {
+  background-color: rgba(0,0,0,.9);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 0;
+  font-size: 1.3em;
+  transition: all 0.5s ease;
+
+  ul {
+    li {
+      &:first-child {
+        padding-top: 60px;
+      }
+
+      a {
+        color: $white;
+        @extend .nav-link;
+      }
+      padding: 30px 0;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    @media (max-width: $br-small) {
+      width: 80%;
+    }
+  }
+}
+
+.hero {
+  max-width: 650px;
+  text-align: center;
+  margin: 150px auto;
+}
+
+.svg--main {
+  fill: $logo-blue;
+  width: 40px;
+  height: 40px;
+  transition: fill 0.5s ease;
+  @media (max-width: $br-medium) {
+    width: 50px;
+    height: 50px;
+  }
+
+  &__mobile {
+    width: 50px;
+    height: 50px;
+    fill: lighten($white, 40%);
+  }
+
+  &:hover {
+    fill: lighten($logo-blue, 8%);
+  }
+}
+
+.hamburger {
+  font-size: 1.3em;
+  @extend .nav-link;
+  @media (min-width: $br-medium) {
+    display: none;
+  }
+
+  &__close {
+    color: $white;
+    @extend .nav-link;
+    position: absolute;
+    right: 0;
+    top: 9px;
+  }
+}
+@media (max-width: $br-medium) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+.hidden {
+  //display: none;
+  visibility: hidden;
+  opacity: 0;
+}
