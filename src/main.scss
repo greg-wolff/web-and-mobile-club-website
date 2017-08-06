@@ -173,24 +173,30 @@ nav {
   transition: all 0.5s ease;
 
   ul {
-    li {
-      &:first-child {
-        padding-top: 60px;
-      }
-
-      a {
-        color: $white;
-        font-size: 1.3em;
-        @extend .nav-link;
-      }
-      padding: 30px 0;
+    li:first-child {
+      padding-top: 60px;
     }
   }
 
   &__wrapper {
     position: relative;
-    width: 85%;
+    width: 70%;
+    @media (max-width: $br-small) {
+      width: 85%;
+    }
     margin: 0 auto;
+  }
+
+  &__item {
+    padding: 30px 0;
+
+    a {
+      display: block;
+      position: relative;
+      color: $white;
+      font-size: 1.3em;
+      @extend .nav-link;
+    }
   }
 }
 

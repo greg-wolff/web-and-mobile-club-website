@@ -8,6 +8,10 @@ menu.addEventListener('click', (e) => {
   e.preventDefault()
   menu.classList.add('hidden')
   mobileNav.classList.remove('hidden')
+  TweenMax.staggerFrom('.mobile-nav__item', .5, {
+    y: -15,
+    opacity: 0,
+  }, 0.06)
 })
 
 close.addEventListener('click', (e) => {
