@@ -95,7 +95,7 @@ h1 {
   line-height: 1.02; }
   @media (min-width: 640px) {
     h1 {
-      font-size: 3em; } }
+      font-size: 2.5 em; } }
 
 h2 {
   font-weight: bold;
@@ -121,7 +121,7 @@ a {
   transition: color 0.5s ease, box-shadow 0.3s ease; }
   a:hover {
     color: #b7cafe;
-    box-shadow: inset 0 -15px 0 0 white; }
+    box-shadow: inset 0 0 0 0 white; }
   a:active {
     color: #5d87fc; }
 
@@ -188,8 +188,14 @@ nav ul li {
 
 .hero {
   max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   margin: 150px auto; }
+  @media (max-width: 640px) {
+    .hero {
+      margin: 90px auto; } }
 
 .svg--main {
   fill: #8FACFD;
@@ -217,6 +223,17 @@ nav ul li {
     position: absolute;
     right: 0;
     top: 9px; }
+
+.spacer {
+  width: 60px;
+  margin: 15px 0;
+  border-bottom: 3px #EFEFEF solid; }
+
+::selection {
+  background: #FFF097; }
+
+::-moz-selection {
+  background: #FFF097; }
 
 @media (max-width: 900px) {
   .hide-mobile {
