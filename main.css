@@ -306,7 +306,8 @@ nav ul li {
   @media (max-width: 640px) {
     .blue-circle {
       bottom: -300px;
-      left: -230px; } }
+      left: -230px;
+      display: none; } }
 
 .red-square {
   width: 250px;

@@ -327,6 +327,7 @@ nav {
   position: absolute;
   overflow: hidden;
   @media (max-width: $br-small) {
+    //TODO: Figure this out
     height: 696px;
   }
 }
@@ -344,6 +345,8 @@ nav {
   @media (max-width: $br-small) {
     bottom: -300px;
     left: -230px;
+    //TODO: Figure this out
+    display: none;
   }
 }
 
