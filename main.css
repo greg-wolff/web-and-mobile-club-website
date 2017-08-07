@@ -106,6 +106,7 @@ h3 {
   font-size: 1.5em; }
 
 h4 {
+  font-weight: bold;
   font-style: italic;
   font-size: 1em; }
 
@@ -139,16 +140,24 @@ p {
 
 main {
   width: 70%;
-  margin: 0 auto; }
+  height: calc(100vh - 40px);
+  margin: 0 auto;
+  padding-top: 40px; }
   @media (max-width: 640px) {
     main {
       width: 85%; } }
 
 header {
-  margin: 40px auto;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center; }
+
+footer {
+  background-color: #fcfcfc;
+  border-top: 1px #EFEFEF solid;
+  padding: 20px 70px;
+  font-size: 0.75em; }
 
 nav > a:last-child {
   padding-right: 0; }
@@ -182,12 +191,15 @@ nav ul li {
       .mobile-nav__wrapper {
         width: 85%; } }
   .mobile-nav__item {
-    padding: 30px 0; }
+    padding: 15px 0; }
     .mobile-nav__item a {
       display: block;
       position: relative;
       color: #AAAAAA;
       font-size: 1.3em; }
+      @media (max-height: 654px) {
+        .mobile-nav__item a {
+          font-size: 1em; } }
 
 .hero {
   max-width: 650px;
@@ -195,10 +207,49 @@ nav ul li {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 150px auto; }
+  margin: 120px auto; }
   @media (max-width: 640px) {
     .hero {
       margin: 90px auto; } }
+
+.cta {
+  margin: 0 auto;
+  max-width: 250px;
+  padding: 35px 30px 30px;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px #EFEFEF solid;
+  box-shadow: 0 6px 35px rgba(50, 50, 93, 0.02), 0 5px 15px rgba(0, 0, 0, 0.01);
+  line-height: 1.19;
+  transition: all 0.5s ease; }
+  .cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 35px rgba(50, 50, 93, 0.03), 0 7px 15px rgba(0, 0, 0, 0.02); }
+  .cta p {
+    font-size: 0.85em;
+    margin: 5px 0; }
+
+.btn--cta {
+  margin-top: 10px;
+  padding: 9px 33px;
+  font-family: "Bariol", Helvetica, sans-serif;
+  font-size: 0.75em;
+  font-weight: bold;
+  border-radius: 20px;
+  color: white;
+  background-color: #8FACFD;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.5s ease, background 0.5s ease, transform 0.2s ease; }
+  .btn--cta:focus {
+    outline: 0;
+    background: #80a1fd;
+    transform: translateY(1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); }
+  .btn--cta:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); }
+  .btn--cta:active {
+    transform: translateY(1px); }
 
 .svg--main {
   fill: #8FACFD;
