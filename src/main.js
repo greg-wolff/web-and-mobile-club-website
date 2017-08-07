@@ -24,3 +24,7 @@ close.addEventListener('click', (e) => {
 
 hideNav.addListener((mq) =>
   mq.matches ? mobileNav.classList.add('hidden') : menu.classList.remove('hidden'))
+
+TweenMax.staggerTo('.fade-in', 0.5, {
+  opacity: 1
+}, 0.1)

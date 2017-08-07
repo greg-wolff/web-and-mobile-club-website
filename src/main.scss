@@ -131,6 +131,8 @@ main {
   padding-top: 40px;
   @media (max-width: $br-small) {
     width: 85%;
+    height: inherit;
+    padding-bottom: 40px;
   }
 }
 
@@ -219,7 +221,7 @@ nav {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 120px auto;
+  margin: 110px auto;
   @media (max-width: $br-small) {
     margin: 90px auto;
   }
@@ -230,16 +232,16 @@ nav {
   max-width: 250px;
   padding: 35px 30px 30px;
   text-align: center;
+  line-height: 1.19;
   border-radius: 10px;
   border: 1px $light-gray solid;
-  box-shadow: 0 6px 35px rgba(50,50,93,.02), 0 5px 15px rgba(0,0,0,.01);
-  line-height: 1.19;
-  transition: all 0.5s ease;
+  background-color: white;
+  transition: box-shadow 0.5s ease, transform 0.5s ease;
 
   &:hover {
     //border: 1px lighten($light-gray, 2%) solid;
     transform: translateY(-1px);
-    box-shadow: 0 8px 35px rgba(50,50,93,.03), 0 7px 15px rgba(0,0,0,.02);
+    box-shadow: 0 6px 35px rgba(50,50,93,.02), 0 5px 15px rgba(0,0,0,.01);
   }
 
   p {
@@ -316,12 +318,77 @@ nav {
   border-bottom: 3px $light-gray solid;
 }
 
+.shapes {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  position: absolute;
+  overflow: hidden;
+  @media (max-width: $br-small) {
+    height: 696px;
+  }
+}
+
+.blue-circle {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  bottom: -230px;
+  left: -180px;
+  border: 140px $logo-blue solid;
+  border-radius: 100%;
+  opacity: 0.14;
+  z-index: -1;
+  @media (max-width: $br-small) {
+    bottom: -300px;
+    left: -230px;
+  }
+}
+
+.red-square {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  right: -267px;
+  top: 140px;
+  border: 140px $logo-red solid;
+  border-radius: 200px;
+  transform: rotate(45deg);
+  opacity: 0.14;
+  z-index: -1;
+  @media (max-width: $br-small) {
+    display: none;
+  }
+}
+
+.yellow-triangle {
+  width: 390px;
+  height: 390px;
+  position: absolute;
+  right: -60px;
+  bottom: -515px;
+  border: 140px $logo-yellow solid;
+  border-radius: 170px;
+  transform: rotate(36deg) skewY(18deg);
+  opacity: 0.14;
+  z-index: -1;
+  @media (max-width: $br-small) {
+    display: none;
+  }
+}
+
 ::selection {
   background: $logo-yellow;
 }
 
 ::-moz-selection {
   background: $logo-yellow;
+}
+
+.fade-in {
+  opacity: 0;
 }
 @media (max-width: $br-medium) {
   .hide-mobile {
@@ -330,7 +397,6 @@ nav {
 }
 
 .hidden {
-  //display: none;
   visibility: hidden;
   opacity: 0;
 }
