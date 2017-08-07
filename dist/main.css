@@ -129,12 +129,12 @@ a {
   a:active {
     color: #5d87fc; }
 
-.nav-link, nav ul li a, .mobile-nav__item a, .hamburger, .hamburger__close {
+.nav-link, footer a, nav ul li a, .mobile-nav__item a, .hamburger, .hamburger__close {
   color: #4D4D4D;
   box-shadow: none;
   font-weight: bold;
   text-transform: lowercase; }
-  .nav-link:hover, nav ul li a:hover, .mobile-nav__item a:hover, .hamburger:hover, .hamburger__close:hover {
+  .nav-link:hover, footer a:hover, nav ul li a:hover, .mobile-nav__item a:hover, .hamburger:hover, .hamburger__close:hover {
     color: #717171;
     box-shadow: none; }
 
@@ -160,9 +160,25 @@ header {
 
 footer {
   background-color: #fcfcfc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border-top: 1px #EFEFEF solid;
   padding: 20px 70px;
   font-size: 0.75em; }
+  @media (max-width: 640px) {
+    footer {
+      flex-direction: column;
+      text-align: center; } }
+
+.social {
+  margin-bottom: 20px; }
+  .social a {
+    padding: 0 5px;
+    font-size: 1.4em; }
+    @media (max-width: 640px) {
+      .social a {
+        font-size: 1.5em; } }
 
 nav > a:last-child {
   padding-right: 0; }
@@ -218,7 +234,7 @@ nav ul li {
 
 .content {
   width: 100%;
-  height: 100%;
+  height: inherit;
   display: flex;
   flex-direction: column;
   align-items: center;
