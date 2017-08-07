@@ -31,6 +31,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'The Web and Mobile Club',
+      //inject: false,
+      filename: 'index.html',
       favicon: __dirname + '/images/favicon.ico',
       minify: {
         collapseWhitespace: true,
@@ -41,6 +43,21 @@ module.exports = {
         minifyCSS: true
       },
       template: './src/index.ejs'
+    }),
+    new HtmlWebpackPlugin({
+      title: 'The Web and Mobile Club | About',
+      //inject: false,
+      filename: 'about.html',
+      favicon: __dirname + '/images/favicon.ico',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeScriptTypeAttributes: true,
+        removeAttributeQuotes: true,
+        useShortDoctype: true,
+        minifyCSS: true
+      },
+      template: './src/about.ejs'
     }),
     new ExtractTextPlugin("main.css")
   ]

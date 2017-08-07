@@ -220,15 +220,17 @@ nav ul li {
         .mobile-nav__item a {
           font-size: 1em; } }
 
-.hero {
+.hero, .hero--main {
   max-width: 650px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center; }
   @media (max-width: 640px) {
-    .hero {
+    .hero, .hero--main {
       margin: 90px auto; } }
+  .hero--main {
+    text-align: center; }
 
 .content {
   width: 100%;

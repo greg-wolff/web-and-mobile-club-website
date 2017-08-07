@@ -249,6 +249,11 @@ nav {
   @media (max-width: $br-small) {
     margin: 90px auto;
   }
+
+  &--main {
+    @extend .hero;
+    text-align: center;
+  }
 }
 
 .content {
