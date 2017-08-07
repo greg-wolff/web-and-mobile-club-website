@@ -1,4 +1,4 @@
-require('./main.scss')
+require('../css/main.scss')
 
 var menu = document.getElementsByClassName('hamburger')[0]
 var close = document.getElementsByClassName('hamburger__close')[0]

@@ -1,39 +1,39 @@
-@import 'css/reset.css';
+@import './reset.css';
 @font-face {
   font-family: 'Bariol';
   font-weight: bold;
   font-style: normal;
-  src: url('fonts/bariol_bold-webfont.woff2'), url('fonts/bariol_bold-webfont.woff');
+  src: url('../fonts/bariol_bold-webfont.woff2'), url('../fonts/bariol_bold-webfont.woff');
 }
 @font-face {
   font-family: 'Bariol';
   font-weight: bold;
   font-style: italic;
-  src: url('fonts/bariol_bold_italic-webfont.woff2') format('woff2'), url('fonts/bariol_bold_italic-webfont.woff') format('woff');
+  src: url('../fonts/bariol_bold_italic-webfont.woff2') format('woff2'), url('../fonts/bariol_bold_italic-webfont.woff') format('woff');
 }
 @font-face {
   font-family: 'Bariol';
   font-weight: 100;
   font-style: normal;
-  src: url('fonts/bariol_light-webfont.woff2') format('woff2'), url('fonts/bariol_light-webfont.woff') format('woff');
+  src: url('../fonts/bariol_light-webfont.woff2') format('woff2'), url('../fonts/bariol_light-webfont.woff') format('woff');
 }
 @font-face {
   font-family: 'Bariol';
   font-weight: 100;
   font-style: italic;
-  src: url('fonts/bariol_light_italic-webfont.woff2') format('woff2'), url('fonts/bariol_light_italic-webfont.woff') format('woff');
+  src: url('../fonts/bariol_light_italic-webfont.woff2') format('woff2'), url('../fonts/bariol_light_italic-webfont.woff') format('woff');
 }
 @font-face {
   font-family: 'Bariol';
   font-weight: normal;
   font-style: normal;
-  src: url('fonts/bariol_regular-webfont.woff2') format('woff2'), url('fonts/bariol_regular-webfont.woff') format('woff');
+  src: url('../fonts/bariol_regular-webfont.woff2') format('woff2'), url('../fonts/bariol_regular-webfont.woff') format('woff');
 }
 @font-face {
   font-family: 'Bariol';
   font-weight: normal;
   font-style: italic;
-  src: url('fonts/bariol_regular_italic-webfont.woff2') format('woff2'), url('fonts/bariol_regular_italic-webfont.woff') format('woff');
+  src: url('../fonts/bariol_regular_italic-webfont.woff2') format('woff2'), url('../fonts/bariol_regular_italic-webfont.woff') format('woff');
 }
 $font-stack: 'Bariol', Helvetica, sans-serif;
 $black: #4D4D4D;
@@ -45,11 +45,15 @@ $logo-yellow: #FFF097;
 $logo-red: #FF8B8B;
 $br-small: 640px;
 $br-medium: 900px;
+$br-large: 1500px;
 
 body {
   font: 16px/1.6 $font-stack;
   @media (min-width: $br-small) {
     font-size: 1.25rem;
+  }
+  @media (min-width: $br-large) {
+    font-size: 1.5em;
   }
 }
 
@@ -221,14 +225,21 @@ nav {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 110px auto;
   @media (max-width: $br-small) {
     margin: 90px auto;
   }
 }
 
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .cta {
-  margin: 0 auto;
   max-width: 250px;
   padding: 35px 30px 30px;
   text-align: center;
@@ -240,7 +251,7 @@ nav {
 
   &:hover {
     //border: 1px lighten($light-gray, 2%) solid;
-    transform: translateY(-1px);
+    transform: translateY(-3px);
     box-shadow: 0 6px 35px rgba(50,50,93,.02), 0 5px 15px rgba(0,0,0,.01);
   }
 
@@ -257,21 +268,22 @@ nav {
   font-size: 0.75em;
   font-weight: bold;
   border-radius: 20px;
-  color: white;
+  color: darken(white, 3%);
   background-color: $logo-blue;
   border: none;
-  box-shadow: 0 2px 5px rgba(0,0,0,.1);
-  transition: box-shadow 0.5s ease, background 0.5s ease, transform 0.2s ease;
+  box-shadow: 0 2px 3px rgba(128, 161, 253, 0.23);
+  transition: box-shadow 0.5s ease, color 0.5s ease, background 0.5s ease, transform 0.2s ease;
 
   &:focus {
     outline: 0;
     background: darken($logo-blue, 3%);
     transform: translateY(1px);
-    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    box-shadow: 0 3px 8px rgba(128, 161, 253, 0.33);
   }
 
   &:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+    color: white;
+    box-shadow: 0 3px 8px rgba(128, 161, 253, 0.43);
   }
 
   &:active {
@@ -319,8 +331,8 @@ nav {
 }
 
 .shapes {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   z-index: -1;
@@ -328,6 +340,7 @@ nav {
   overflow: hidden;
   @media (max-width: $br-small) {
     //TODO: Figure this out
+    display: none;
     height: 696px;
   }
 }
@@ -348,6 +361,11 @@ nav {
     //TODO: Figure this out
     display: none;
   }
+  @media (min-width: $br-large) {
+    width: 580px;
+    height: 580px;
+    left: -280px;
+  }
 }
 
 .red-square {
@@ -364,6 +382,11 @@ nav {
   @media (max-width: $br-small) {
     display: none;
   }
+  @media (min-width: $br-large) {
+    width: 400px;
+    height: 400px;
+    right: -350px;
+  }
 }
 
 .yellow-triangle {
@@ -379,6 +402,11 @@ nav {
   z-index: -1;
   @media (max-width: $br-small) {
     display: none;
+  }
+  @media (min-width: $br-large) {
+    width: 580px;
+    height: 580px;
+    bottom: -700px;
   }
 }
 

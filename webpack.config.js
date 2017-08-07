@@ -31,7 +31,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'The Web and Mobile Club',
-      favicon: __dirname + '/src/images/favicon.ico',
+      favicon: __dirname + '/images/favicon.ico',
       minify: {
         collapseWhitespace: true,
         removeComments: true,
