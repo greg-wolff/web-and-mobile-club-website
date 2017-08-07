@@ -166,12 +166,10 @@ footer {
 }
 
 .social {
-  margin-bottom: 20px;
-
   a {
     padding: 0 5px;
     @media (max-width: $br-small) {
-      font-size: 1.5em;
+      font-size: 1.8em;
     }
     font-size: 1.4em;
   }

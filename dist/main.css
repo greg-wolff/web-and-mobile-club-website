@@ -171,14 +171,12 @@ footer {
       flex-direction: column;
       text-align: center; } }
 
-.social {
-  margin-bottom: 20px; }
-  .social a {
-    padding: 0 5px;
-    font-size: 1.4em; }
-    @media (max-width: 640px) {
-      .social a {
-        font-size: 1.5em; } }
+.social a {
+  padding: 0 5px;
+  font-size: 1.4em; }
+  @media (max-width: 640px) {
+    .social a {
+      font-size: 1.8em; } }
 
 nav > a:last-child {
   padding-right: 0; }
