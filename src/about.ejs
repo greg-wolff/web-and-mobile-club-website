@@ -18,7 +18,7 @@
 
 <body>
   <main>
-    <header><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--main"><path d="M898.25.34H266.77C119.67.34,0,120,0,267.12V898.59c0,147.09,119.67,266.77,266.77,266.77H898.25c147.1,0,266.78-119.67,266.78-266.77V267.12C1165,120,1045.35.34,898.25.34Zm-315.74,836C442.73,836.36,329,722.64,329,582.85S442.73,329.35,582.51,329.35,836,443.07,836,582.85,722.3,836.36,582.51,836.36Z"/></svg>
+    <header><a class="svg--main__link" href="./"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--main"><path d="M898.25.34H266.77C119.67.34,0,120,0,267.12V898.59c0,147.09,119.67,266.77,266.77,266.77H898.25c147.1,0,266.78-119.67,266.78-266.77V267.12C1165,120,1045.35.34,898.25.34Zm-315.74,836C442.73,836.36,329,722.64,329,582.85S442.73,329.35,582.51,329.35,836,443.07,836,582.85,722.3,836.36,582.51,836.36Z"/></svg></a>
       <nav>
         <ul class="hide-mobile">
           <li><a href="#">About</a></li>
@@ -31,7 +31,7 @@
       </nav>
       <div class="mobile-nav hidden">
         <div class="mobile-nav__wrapper">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--main__mobile"><path d="M898.25.34H266.77C119.67.34,0,120,0,267.12V898.59c0,147.09,119.67,266.77,266.77,266.77H898.25c147.1,0,266.78-119.67,266.78-266.77V267.12C1165,120,1045.35.34,898.25.34Zm-315.74,836C442.73,836.36,329,722.64,329,582.85S442.73,329.35,582.51,329.35,836,443.07,836,582.85,722.3,836.36,582.51,836.36Z"/></svg>
+          <a class="svg--main__link" href="./"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--main__mobile"><path d="M898.25.34H266.77C119.67.34,0,120,0,267.12V898.59c0,147.09,119.67,266.77,266.77,266.77H898.25c147.1,0,266.78-119.67,266.78-266.77V267.12C1165,120,1045.35.34,898.25.34Zm-315.74,836C442.73,836.36,329,722.64,329,582.85S442.73,329.35,582.51,329.35,836,443.07,836,582.85,722.3,836.36,582.51,836.36Z"/></svg></a>
           <a href="#" class="hamburger__close">Close</a>
           <ul>
             <li class="mobile-nav__item"><a href="#">About</a></li>
@@ -43,11 +43,101 @@
         </div>
       </div>
     </header>
-    <section class="hero">
-      <h1 class="fade-in">About</h1>
+    <div class="two-col">
+      <section class="hero--flat">
+        <h1 class="fade-in">About</h1>
+        <div class="fade-in spacer"></div>
+        <p class="fade-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras a ligula quis diam consequat varius. Ut felis tortor, rutrum sit amet malesuada sit amet, porttitor in est. Integer condimentum laoreet augue, et dictum sapien sagittis at. Nunc vehicula
+          nulla sit amet dictum dapibus.</p>
+        <p class="fade-in">Curabitur auctor rutrum ante in volutpat. Integer commodo dolor sed ex bibendum finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut hendrerit blandit augue, sed volutpat ipsum tristique sit amet. Integer a mollis magna. Suspendisse
+          accumsan, orci nec tristique ornare, urna lectus varius enim, nec luctus arcu nulla at mauris. Nunc interdum id ante vitae bibendum. In hac habitasse platea dictumst. Donec eget purus quis neque sagittis dignissim nec faucibus tellus. </p>
+      </section>
+      <section class="fade-in drawing">
+        <div class="boxes">
+          <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--main__display"><path d="M898.25.34H266.77C119.67.34,0,120,0,267.12V898.59c0,147.09,119.67,266.77,266.77,266.77H898.25c147.1,0,266.78-119.67,266.78-266.77V267.12C1165,120,1045.35.34,898.25.34Zm-315.74,836C442.73,836.36,329,722.64,329,582.85S442.73,329.35,582.51,329.35,836,443.07,836,582.85,722.3,836.36,582.51,836.36Z"/></svg>
+          </div>
+          <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--design__display"><path d="M898.72,1.41H266.91C119.74,1.41,0,121.15,0,268.33v631.8C0,1047.3,119.74,1167,266.91,1167H898.72c147.18,0,266.91-119.74,266.91-266.91V268.33C1165.63,121.15,1045.89,1.41,898.72,1.41ZM783.8,805.58h-402c-51.61,0-83.29-56.53-56.34-100.55l201-328.34c25.77-42.1,86.92-42.1,112.69,0L840.15,705C867.09,749,835.42,805.58,783.8,805.58Z"/></svg>
+          </div>
+          <div class="box">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--develop__display"><path d="M898.37,1.42H267.25C120.24,1.42.63,121,.63,268V899.16c0,147,119.61,266.62,266.62,266.62H898.37c147,0,266.63-119.61,266.63-266.62V268C1165,121,1045.39,1.42,898.37,1.42ZM819.14,685.2A134.72,134.72,0,0,1,684.42,819.93H481.21A134.72,134.72,0,0,1,346.49,685.2V482A134.72,134.72,0,0,1,481.21,347.27H684.42A134.72,134.72,0,0,1,819.14,482Z"/></svg>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="fade-in full-width">
+      <section class="cta--container">
+        <h3>Want to get involved?</h3>
+        <div class="spacer"></div>
+        <p>We’re a collaborative group of students who are constantly educating eachother on new technologies and strategies for approaching web and mobile design and development.</p>
+        <button class="btn--cta">Join Us</button>
+      </section>
+
+    </div>
+    <section class="hero--flat">
+      <h1 class="fade-in">Leadership</h1>
       <div class="fade-in spacer"></div>
-      <p class="fade-in">We’re a group of students passionate about human-centered design and progressive programming practices, learn more about us <a href="#">about us</a></p>
     </section>
+    <div class="leadership">
+      <div class="leadership--container">
+        <div class="leadership--card"></div>
+        <h4>Greg Wolff</h4>
+        <h5>Co-Founder / Director of Design</h5>
+        <div class="social">
+          <a class="nav-link" href="mailto:gregwwolff@gmail.com" target="_blank"><i class="fa fa-envelope-o"></i></a>
+          <a class="nav-link" href="https://www.linkedin.com/in/gregwwolff/" target="_blank"><i class="fa fa-linkedin"></i></a>
+          <a class="nav-link" href="https://github.com/greg-wolff" target="_blank"><i class="fa fa-github"></i></a>
+          <a class="nav-link" href="https://medium.com/@greg.wolff" target="_blank"><i class="fa fa-medium"></i></a>
+          <a class="nav-link" href="https://dribbble.com/gregwolff" target="_blank"><i class="fa fa-dribbble"></i></a>
+        </div>
+      </div>
+      <div class="leadership--container">
+        <div class="leadership--card"></div>
+        <h4>Elton Rego</h4>
+        <h5>Co-Founder</h5>
+        <div class="social">
+          <a class="nav-link" href="#" target="_blank"><i class="fa fa-envelope-o"></i></a>
+          <a class="nav-link" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="leadership--container">
+        <div class="leadership--card"></div>
+        <h4>Julius Fan</h4>
+        <h5>Co-Founder</h5>
+        <div class="social">
+          <a class="nav-link" href="#" target="_blank"><i class="fa fa-envelope-o"></i></a>
+          <a class="nav-link" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="leadership--container">
+        <div class="leadership--card"></div>
+        <h4>Ivy Chen</h4>
+        <h5>Co-Founder</h5>
+        <div class="social">
+          <a class="nav-link" href="#" target="_blank"><i class="fa fa-envelope-o"></i></a>
+          <a class="nav-link" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="leadership--container">
+        <div class="leadership--card"></div>
+        <h4>Huy Duc Ngo</h4>
+        <h5>Design</h5>
+        <div class="social">
+          <a class="nav-link" href="#" target="_blank"><i class="fa fa-envelope-o"></i></a>
+          <a class="nav-link" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="leadership--container">
+        <div class="leadership--card"></div>
+        <h4></h4>
+        <h5></h5>
+        <div class="social">
+          <a class="nav-link" href="#" target="_blank"><i class="fa fa-envelope-o"></i></a>
+          <a class="nav-link" href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
   </main>
   <footer>
     <div class="social">

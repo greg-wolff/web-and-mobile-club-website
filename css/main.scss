@@ -93,7 +93,7 @@ h4 {
 h5 {
   font-weight: lighter;
   font-style: italic;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 a {
@@ -130,13 +130,18 @@ p {
 
 main {
   width: 70%;
-  height: calc(100vh - 40px);
+  height: 100%;
   margin: 0 auto;
   padding-top: 40px;
   @media (max-width: $br-small) {
     width: 85%;
     height: inherit;
     padding-bottom: 40px;
+  }
+
+  &.home {
+    @extend main;
+    height: calc(100vh - 40px);
   }
 }
 
@@ -241,17 +246,34 @@ nav {
 }
 
 .hero {
-  max-width: 650px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  align-items: left;
+  text-align: left;
   @media (max-width: $br-small) {
     margin: 90px auto;
   }
 
+  &--flat {
+    @extend .hero;
+    flex: 1 100%;
+    margin-top: 70px;
+
+    p {
+      margin-top: 20px;
+
+      &:first-of-type {
+        margin-top: 70px;
+      }
+    }
+  }
+
   &--main {
     @extend .hero;
+    max-width: 650px;
+    align-items: center;
     text-align: center;
   }
 }
@@ -263,6 +285,25 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.two-col {
+  display: flex;
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin: 50px -50vw;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 0;
+  border: 1px darken(white, 6%) solid;
+  background-color: darken(white, 1%);
 }
 
 .cta {
@@ -284,6 +325,21 @@ nav {
   p {
     font-size: 0.85em;
     margin: 5px 0;
+  }
+}
+
+.cta--container {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.19;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .btn--cta {
+    margin-top: 30px;
   }
 }
 
@@ -317,6 +373,38 @@ nav {
   }
 }
 
+.leadership {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 50px 0;
+}
+
+.leadership--container {
+  width: 270px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .social {
+    font-size: 0.7em;
+
+    i {
+      color: lighten($gray,5%);
+    }
+  }
+}
+
+.leadership--card {
+  width: 200px;
+  height: 300px;
+  margin-bottom: 20px;
+  border: 1px $light-gray solid;
+  border-radius: 5px;
+}
+
 .svg--main {
   fill: $logo-blue;
   width: 40px;
@@ -329,8 +417,51 @@ nav {
     fill: lighten($white, 40%);
   }
 
+  &__link {
+    box-shadow: none;
+  }
+
+  &__display {
+    @extend .svg--main;
+    fill: lighten($logo-blue, 8%);
+    width: 70px;
+    height: 70px;
+  }
+
   &:hover {
     fill: lighten($logo-blue, 8%);
+  }
+}
+
+.svg--design {
+  @extend .svg--main;
+  fill: $logo-yellow;
+
+  &__display {
+    @extend .svg--design;
+    fill: lighten($logo-yellow, 8%);
+    width: 70px;
+    height: 70px;
+  }
+
+  &:hover {
+    fill: lighten($logo-yellow, 8%);
+  }
+}
+
+.svg--develop {
+  @extend .svg--main;
+  fill: $logo-red;
+
+  &__display {
+    @extend .svg--develop;
+    fill: lighten($logo-red, 8%);
+    width: 70px;
+    height: 70px;
+  }
+
+  &:hover {
+    fill: lighten($logo-red, 8%);
   }
 }
 
@@ -354,6 +485,46 @@ nav {
   width: 60px;
   margin: 15px 0;
   border-bottom: 3px $light-gray solid;
+}
+
+.drawing {
+  margin-top: 70px;
+  flex: 1 100%;
+  display: flex;
+  flex-flow: row-reverse;
+  align-self: center;
+  height: 100%;
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}
+
+.boxes {
+  width: 388px;
+
+  .box:nth-child(3) {
+    height: 180px;
+  }
+
+  .box:nth-child(2) {
+    height: 364px;
+    margin: -219px 0 -123px 206px;
+  }
+}
+
+.box {
+  width: 180px;
+  height: 295px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px $light-gray solid;
+  border-radius: 8px;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  &:hover {
+    transform: scale(1.06);
+  }
 }
 
 .shapes {
