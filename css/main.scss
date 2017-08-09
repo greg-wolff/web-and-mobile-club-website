@@ -138,6 +138,9 @@ main {
     height: inherit;
     padding-bottom: 40px;
   }
+  @media (min-width: $br-large) {
+    width: 50%;
+  }
 
   &.home {
     @extend main;
@@ -275,6 +278,9 @@ nav {
     max-width: 650px;
     align-items: center;
     text-align: center;
+    @media (min-width: $br-large) {
+      max-width: 660px;
+    }
   }
 }
 

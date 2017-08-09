@@ -151,6 +151,9 @@ main, main.home {
       width: 85%;
       height: inherit;
       padding-bottom: 40px; } }
+  @media (min-width: 1500px) {
+    main, main.home {
+      width: 50%; } }
   main.home {
     height: calc(100vh - 40px); }
 
@@ -243,6 +246,9 @@ nav ul li {
     max-width: 650px;
     align-items: center;
     text-align: center; }
+    @media (min-width: 1500px) {
+      .hero--main {
+        max-width: 660px; } }
 
 .content {
   width: 100%;
