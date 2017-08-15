@@ -70,7 +70,7 @@ h1 {
   font-size: 2.4em;
   line-height: 1.02;
   @media (min-width: $br-small) {
-    font-size: 2.5 em;
+    font-size: 2.5em;
   }
 }
 
@@ -138,11 +138,11 @@ main {
     height: inherit;
     padding-bottom: 40px;
   }
-  @media (min-width: $br-large) {
+  @media (min-width: 1750px) {
     width: 50%;
   }
 
-  &.home {
+  &.full {
     @extend main;
     height: calc(100vh - 40px);
   }
@@ -256,7 +256,7 @@ nav {
   align-items: left;
   text-align: left;
   @media (max-width: $br-small) {
-    margin: 90px auto;
+    margin: 20px auto;
   }
 
   &--flat {
@@ -409,6 +409,98 @@ nav {
   margin-bottom: 20px;
   border: 1px $light-gray solid;
   border-radius: 5px;
+}
+
+#contact-form {
+  padding: 2px 50px 20px;
+  line-height: 1.19;
+  border-radius: 10px;
+  border: 1px $light-gray solid;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: border 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
+
+  &:hover {
+    border: 1px darken($light-gray, 4%) solid;
+    box-shadow: 0 6px 35px rgba(50,50,93,.02), 0 5px 15px rgba(0,0,0,.01);
+    transform: translateY(-1px);
+  }
+
+  p {
+    font-size: 0.9em;
+    padding: 21px 0;
+  }
+  @media (min-width: $br-large) {
+    padding: 12px 50px 20px;
+  }
+}
+
+.error,
+.success {
+  width: 372px;
+  height: 152px;
+  margin-bottom: 303px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  border-radius: 10px;
+  border: 1px $light-gray solid;
+  padding: 40px;
+  @media (min-width: $br-large) {
+    margin-bottom: 543px;
+  }
+}
+
+.field {
+  label {
+    margin: 0 100% 5px 0;
+    font-size: 0.7em;
+    color: $gray;
+  }
+  width: 300px;
+  margin: 10px 0;
+  @media (max-width: $br-small) {
+    width: 200px;
+  }
+  @media (min-width: $br-large) {
+    width: 390px;
+  }
+}
+
+input,
+textarea {
+  margin-top: 4px;
+  color: $gray;
+  display: block;
+  width: calc(100% - 20px);
+  border-radius: 5px;
+  border: 1px $light-gray solid;
+  background-color: #fbfbfb;
+  padding: 10px;
+  outline: none;
+  transition: border 0.5s ease;
+
+  &:focus {
+    border: 1px darken($light-gray, 8%) solid;
+  }
+  @media (min-width: $br-large) {
+    width: calc(100% - 32px);
+    padding: 16px;
+    font-size: 0.5em;
+  }
+}
+
+textarea {
+  max-width: 280px;
+  @media (min-width: $br-large) {
+    height: 185px;
+    max-width: 358px;
+  }
 }
 
 .svg--main {

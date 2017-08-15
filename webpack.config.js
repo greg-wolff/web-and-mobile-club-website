@@ -1,5 +1,7 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+var UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -20,7 +22,12 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader']
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        }
       },
       {
         test: /\.(png|woff(2)?|svg)$/,
@@ -59,6 +66,29 @@ module.exports = {
       },
       template: './src/about.ejs'
     }),
-    new ExtractTextPlugin("main.css")
+    new HtmlWebpackPlugin({
+      title: 'The Web and Mobile Club | Contact',
+      //inject: false,
+      filename: 'contact.html',
+      favicon: __dirname + '/images/favicon.ico',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeScriptTypeAttributes: true,
+        removeAttributeQuotes: true,
+        useShortDoctype: true,
+        minifyCSS: true
+      },
+      template: './src/contact.ejs'
+    }),
+    new ExtractTextPlugin("main.css"),
+    new OptimizeCssAssetsPlugin({
+      cssProcessorOptions: {
+        discardComments: {
+          removeAll: true
+        }
+      }
+    }),
+    new UglifyJSPlugin()
   ]
 }
