@@ -50,30 +50,30 @@
         <h1 class="fade-in">Contact</h1>
         <div class="fade-in spacer"></div>
         <div id="form-messages"></div>
-
-        <form id="contact-form" class="fade-in" method="post" action="mailer.php">
+        <form id="contact-form" class="fade-in" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLScDxYbzLIg_wwf82sSfna54YXVnVKWh6-kYhW9ecatPK_vyPA/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
           <div class="field">
             <p>
               Have any questions for us? Looking to sponsor, or get involved some other way? Drop us a note.
             </p>
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required placeholder="Steve">
+            <input type="text" id="name" name="entry.1956951886" required placeholder="Steve">
           </div>
 
           <div class="field">
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required placeholder="steve@apple.com">
+            <input type="email" id="email" name="entry.238057913" required placeholder="steve@apple.com">
           </div>
 
           <div class="field">
             <label for="message">Message:</label>
-            <textarea id="message" name="message" required placeholder="I'd like to sponsor your club..."></textarea>
+            <textarea id="message" name="entry.749461759" required placeholder="I'd like to sponsor your club..."></textarea>
           </div>
 
           <div class="field">
             <button class="btn--cta" type="submit">Send</button>
           </div>
         </form>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>        
       </section>
     </div>
   </main>

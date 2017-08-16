@@ -32,45 +32,15 @@ TweenMax.staggerTo('.fade-in', 0.5, {
 var form = $('#contact-form')
 var formMessages = $('#form-messages')
 $(form).submit(function(event) {
-  event.preventDefault()
-
-  var formData = $(form).serialize()
-  $.ajax({
-    type: 'POST',
-    url: $(form).attr('action'),
-    data: formData
-  }).done(function(response) {
     $(form).animate({
       opacity: 0
     }, 500, function() {
       $(form).css('display', 'none')
       $(formMessages).removeClass('error')
       $(formMessages).addClass('success')
-      $(formMessages).html('<p>Thanks for reaching out. We\'ll get back to you shortly!</p>')
+      $(formMessages).html('<p>Thanks for reaching out. We\'ll get back to you shortly!</p><a href="./">Go back to home</a>')
       $(formMessages).animate({
         opacity: 1
       }, 500)
     })
-  }).fail(function(data) {
-    $(form).animate({
-      opacity: 0
-    }, 500, function() {
-      $(form).css('display', 'none')
-      $(formMessages).removeClass('success')
-      $(formMessages).addClass('error')
-      var errmsg = '<p>Uh oh..</p><p>'
-      if (data.responseText !== '') {
-        errmsg += 'errmsg = ' + data.responseText
-      } else {
-        errmsg += 'Something isn\'t working right..'
-      }
-      errmsg += '</p><p>Try just emailing us <a href="mailto:webandmobileclub@gmail.com?body=Also%2c%20I%20got%20this%20error%20message%3a%20%22'
-      errmsg += encodeURI(data.responseText)
-      errmsg += '%22" target="_blank">here</a></p>'
-      $(formMessages).html(errmsg)
-      $(formMessages).animate({
-        opacity: 1
-      }, 500)
-    })
-  })
 })
