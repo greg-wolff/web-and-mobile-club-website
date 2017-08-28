@@ -5,37 +5,45 @@
   font-style: normal;
   src: url('../fonts/bariol_bold-webfont.woff2'), url('../fonts/bariol_bold-webfont.woff');
 }
+
 @font-face {
   font-family: 'Bariol';
   font-weight: bold;
   font-style: italic;
   src: url('../fonts/bariol_bold_italic-webfont.woff2') format('woff2'), url('../fonts/bariol_bold_italic-webfont.woff') format('woff');
 }
+
 @font-face {
   font-family: 'Bariol';
   font-weight: 100;
   font-style: normal;
   src: url('../fonts/bariol_light-webfont.woff2') format('woff2'), url('../fonts/bariol_light-webfont.woff') format('woff');
 }
+
 @font-face {
   font-family: 'Bariol';
   font-weight: 100;
   font-style: italic;
   src: url('../fonts/bariol_light_italic-webfont.woff2') format('woff2'), url('../fonts/bariol_light_italic-webfont.woff') format('woff');
 }
+
 @font-face {
   font-family: 'Bariol';
   font-weight: normal;
   font-style: normal;
   src: url('../fonts/bariol_regular-webfont.woff2') format('woff2'), url('../fonts/bariol_regular-webfont.woff') format('woff');
 }
+
 @font-face {
   font-family: 'Bariol';
   font-weight: normal;
   font-style: italic;
   src: url('../fonts/bariol_regular_italic-webfont.woff2') format('woff2'), url('../fonts/bariol_regular_italic-webfont.woff') format('woff');
 }
-$font-stack: 'Bariol', Helvetica, sans-serif;
+
+$font-stack: 'Bariol',
+Helvetica,
+sans-serif;
 $black: #4D4D4D;
 $gray: #939393;
 $light-gray: #EFEFEF;
@@ -46,7 +54,6 @@ $logo-red: #FF8B8B;
 $br-small: 640px;
 $br-medium: 900px;
 $br-large: 1500px;
-
 body {
   font: 16px/1.6 $font-stack;
   @media (min-width: $br-small) {
@@ -101,12 +108,10 @@ a {
   color: $logo-blue;
   box-shadow: inset 0 -9px 0 0 lighten($logo-blue, 18%);
   transition: color 0.5s ease, box-shadow 0.3s ease;
-
   &:hover {
     color: lighten($logo-blue, 8%);
     box-shadow: inset 0 0 0 0 lighten($logo-blue, 30%);
   }
-
   &:active {
     color: darken($logo-blue, 10%);
   }
@@ -117,7 +122,6 @@ a {
   box-shadow: none;
   font-weight: bold;
   text-transform: lowercase;
-
   &:hover {
     color: lighten($black, 14%);
     box-shadow: none;
@@ -141,7 +145,6 @@ main {
   @media (min-width: 1750px) {
     width: 50%;
   }
-
   &.full {
     @extend main;
     height: calc(100vh - 40px);
@@ -167,7 +170,6 @@ footer {
     flex-direction: column;
     text-align: center;
   }
-
   a {
     @extend .nav-link
   }
@@ -184,19 +186,16 @@ footer {
 }
 
 nav {
-  > a:last-child {
+  >a:last-child {
     padding-right: 0;
   }
-
   ul {
     li {
       font-size: 0.9em;
       display: inline-block;
-
       &:last-child a {
         padding-right: 0;
       }
-
       a {
         @extend .nav-link;
         padding: 10px 31px;
@@ -206,7 +205,7 @@ nav {
 }
 
 .mobile-nav {
-  background-color: rgba(0,0,0,.9);
+  background-color: rgba(0, 0, 0, .9);
   z-index: 1000;
   position: fixed;
   top: 0;
@@ -216,13 +215,11 @@ nav {
   padding: 40px 0;
   font-size: 1.3em;
   transition: all 0.5s ease;
-
   ul {
     li:first-child {
       padding-top: 60px;
     }
   }
-
   &__wrapper {
     position: relative;
     width: 70%;
@@ -231,10 +228,8 @@ nav {
     }
     margin: 0 auto;
   }
-
   &__item {
     padding: 15px 0;
-
     a {
       display: block;
       position: relative;
@@ -258,21 +253,17 @@ nav {
   @media (max-width: $br-small) {
     margin: 20px auto;
   }
-
   &--flat {
     @extend .hero;
     flex: 1 100%;
     margin-top: 70px;
-
     p {
       margin-top: 20px;
-
       &:first-of-type {
         margin-top: 70px;
       }
     }
   }
-
   &--main {
     @extend .hero;
     max-width: 650px;
@@ -290,7 +281,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .two-col {
@@ -321,13 +312,11 @@ nav {
   border: 1px $light-gray solid;
   background-color: white;
   transition: box-shadow 0.5s ease, transform 0.5s ease;
-
   &:hover {
     //border: 1px lighten($light-gray, 2%) solid;
     transform: translateY(-3px);
-    box-shadow: 0 6px 35px rgba(50,50,93,.02), 0 5px 15px rgba(0,0,0,.01);
+    box-shadow: 0 6px 35px rgba(50, 50, 93, .02), 0 5px 15px rgba(0, 0, 0, .01);
   }
-
   p {
     font-size: 0.85em;
     margin: 5px 0;
@@ -343,7 +332,6 @@ nav {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
   .btn--cta {
     margin-top: 30px;
   }
@@ -361,19 +349,16 @@ nav {
   border: none;
   box-shadow: 0 2px 3px rgba(128, 161, 253, 0.23);
   transition: box-shadow 0.5s ease, color 0.5s ease, background 0.5s ease, transform 0.2s ease;
-
   &:focus {
     outline: 0;
     background: darken($logo-blue, 3%);
     transform: translateY(1px);
     box-shadow: 0 3px 8px rgba(128, 161, 253, 0.33);
   }
-
   &:hover {
     color: white;
     box-shadow: 0 3px 8px rgba(128, 161, 253, 0.43);
   }
-
   &:active {
     transform: translateY(1px);
   }
@@ -393,12 +378,10 @@ nav {
   flex-direction: column;
   align-items: center;
   text-align: center;
-
   .social {
     font-size: 0.7em;
-
     i {
-      color: lighten($gray,5%);
+      color: lighten($gray, 5%);
     }
   }
 }
@@ -421,13 +404,11 @@ nav {
   flex-direction: column;
   align-items: center;
   transition: border 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
-
   &:hover {
     border: 1px darken($light-gray, 4%) solid;
-    box-shadow: 0 6px 35px rgba(50,50,93,.02), 0 5px 15px rgba(0,0,0,.01);
+    box-shadow: 0 6px 35px rgba(50, 50, 93, .02), 0 5px 15px rgba(0, 0, 0, .01);
     transform: translateY(-1px);
   }
-
   p {
     font-size: 0.9em;
     padding: 21px 0;
@@ -484,7 +465,6 @@ textarea {
   padding: 10px;
   outline: none;
   transition: border 0.5s ease;
-
   &:focus {
     border: 1px darken($light-gray, 8%) solid;
   }
@@ -508,24 +488,20 @@ textarea {
   width: 40px;
   height: 40px;
   transition: fill 0.5s ease;
-
   &__mobile {
     width: 40px;
     height: 40px;
     fill: lighten($white, 40%);
   }
-
   &__link {
     box-shadow: none;
   }
-
   &__display {
     @extend .svg--main;
     fill: lighten($logo-blue, 8%);
     width: 70px;
     height: 70px;
   }
-
   &:hover {
     fill: lighten($logo-blue, 8%);
   }
@@ -534,14 +510,12 @@ textarea {
 .svg--design {
   @extend .svg--main;
   fill: $logo-yellow;
-
   &__display {
     @extend .svg--design;
     fill: lighten($logo-yellow, 8%);
     width: 70px;
     height: 70px;
   }
-
   &:hover {
     fill: lighten($logo-yellow, 8%);
   }
@@ -550,14 +524,12 @@ textarea {
 .svg--develop {
   @extend .svg--main;
   fill: $logo-red;
-
   &__display {
     @extend .svg--develop;
     fill: lighten($logo-red, 8%);
     width: 70px;
     height: 70px;
   }
-
   &:hover {
     fill: lighten($logo-red, 8%);
   }
@@ -569,7 +541,6 @@ textarea {
   @media (min-width: $br-medium) {
     display: none;
   }
-
   &__close {
     color: $white;
     @extend .nav-link;
@@ -599,11 +570,9 @@ textarea {
 
 .boxes {
   width: 388px;
-
   .box:nth-child(3) {
     height: 180px;
   }
-
   .box:nth-child(2) {
     height: 364px;
     margin: -219px 0 -123px 206px;
@@ -619,7 +588,6 @@ textarea {
   border: 1px $light-gray solid;
   border-radius: 8px;
   transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
   &:hover {
     transform: scale(1.06);
   }
@@ -652,8 +620,7 @@ textarea {
   z-index: -1;
   @media (max-width: $br-small) {
     bottom: -300px;
-    left: -230px;
-    //TODO: Figure this out
+    left: -230px; //TODO: Figure this out
     display: none;
   }
   @media (min-width: $br-large) {
@@ -716,6 +683,7 @@ textarea {
 .fade-in {
   opacity: 0;
 }
+
 @media (max-width: $br-medium) {
   .hide-mobile {
     display: none;
