@@ -43,7 +43,7 @@ $br-large: 1500px;
 body {
   font: 17px/1.6 $font-stack;
   @media (max-width: $br-small) {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   @media (min-width: $br-large) {
     font-size: 1.5em;
@@ -60,7 +60,7 @@ h5 {
 
 h1 {
   font-weight: normal;
-  font-size: 2.4em;
+  font-size: 2.6em;
   line-height: 1.02;
   @media (min-width: $br-small) {
     font-size: 2.8em;
@@ -119,9 +119,7 @@ a {
 .nav-link {
   color: $black;
   box-shadow: none;
-  font-weight: 500;
   outline: 0;
-  text-transform: lowercase;
   &:hover {
     color: lighten($black, 14%);
     box-shadow: none;
@@ -146,11 +144,14 @@ main {
     padding-bottom: 40px;
   }
   @media (min-width: 1750px) {
-    width: 50%;
+    width: 60%;
   }
   &.full {
     @extend main;
     height: calc(100vh - 40px);
+    @media (max-height: $br-small) {
+      height: calc(120vh - 40px);
+    }
   }
 }
 
@@ -274,7 +275,11 @@ nav {
     align-items: center;
     text-align: center;
     @media (min-width: $br-large) {
-      max-width: 660px;
+      max-width: 860px;
+    }
+    @media (max-width: $br-small) {
+      max-width: 100%;
+      margin-top: 40px;
     }
   }
 }
@@ -325,6 +330,9 @@ nav {
     font-size: 0.85em;
     margin: 15px 0;
   }
+  @media (min-width: $br-large) {
+    max-width: 350px;
+  }
 }
 
 .cta--container {
@@ -339,6 +347,9 @@ nav {
   .btn--cta {
     margin-top: 30px;
   }
+  @media (max-width: $br-small) {
+    width: 270px;
+  }
 }
 
 .btn--cta {
@@ -346,7 +357,6 @@ nav {
   padding: 9px 33px;
   font-family: $font-stack;
   font-size: 0.75em;
-  font-weight: bold;
   border-radius: 20px;
   color: white;
   background-color: $logo-blue;
@@ -501,6 +511,8 @@ textarea {
     box-shadow: none;
     outline: 0;
     transition: transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
     &:focus {
       transform: scale(1.1);
     }
@@ -629,7 +641,7 @@ textarea {
   z-index: -1;
   @media (max-width: $br-small) {
     bottom: -300px;
-    left: -230px; //TODO: Figure this out
+    left: -260px;
     display: none;
   }
   @media (min-width: $br-large) {
