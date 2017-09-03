@@ -31,5 +31,6 @@
     "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "^0.5.9",
     "webpack": "^3.5.4"
-  }
+  },
+  "dependencies": {}
 }

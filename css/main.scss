@@ -1,50 +1,36 @@
 @import './reset.css';
 @font-face {
-  font-family: 'Bariol';
-  font-weight: bold;
-  font-style: normal;
-  src: url('../fonts/bariol_bold-webfont.woff2'), url('../fonts/bariol_bold-webfont.woff');
-}
-
-@font-face {
-  font-family: 'Bariol';
-  font-weight: bold;
-  font-style: italic;
-  src: url('../fonts/bariol_bold_italic-webfont.woff2') format('woff2'), url('../fonts/bariol_bold_italic-webfont.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Bariol';
-  font-weight: 100;
-  font-style: normal;
-  src: url('../fonts/bariol_light-webfont.woff2') format('woff2'), url('../fonts/bariol_light-webfont.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Bariol';
-  font-weight: 100;
-  font-style: italic;
-  src: url('../fonts/bariol_light_italic-webfont.woff2') format('woff2'), url('../fonts/bariol_light_italic-webfont.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Bariol';
+  font-family: 'GR';
   font-weight: normal;
   font-style: normal;
-  src: url('../fonts/bariol_regular-webfont.woff2') format('woff2'), url('../fonts/bariol_regular-webfont.woff') format('woff');
+  src: url('../fonts/GR-Book.woff') format('woff');
 }
 
 @font-face {
-  font-family: 'Bariol';
+  font-family: 'GR';
   font-weight: normal;
   font-style: italic;
-  src: url('../fonts/bariol_regular_italic-webfont.woff2') format('woff2'), url('../fonts/bariol_regular_italic-webfont.woff') format('woff');
+  src: url('../fonts/GR-BookItalic.woff') format('woff');
 }
 
-$font-stack: 'Bariol',
+@font-face {
+  font-family: 'GR';
+  font-weight: 500;
+  font-style: normal;
+  src: url('../fonts/GR-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'GR';
+  font-weight: 500;
+  font-style: italic;
+  src: url('../fonts/GR-MediumItalic.woff') format('woff');
+}
+
+$font-stack: 'GR',
 Helvetica,
 sans-serif;
-$black: #4D4D4D;
+$black: #444;
 $gray: #939393;
 $light-gray: #EFEFEF;
 $white: #AAAAAA;
@@ -55,8 +41,8 @@ $br-small: 640px;
 $br-medium: 900px;
 $br-large: 1500px;
 body {
-  font: 16px/1.6 $font-stack;
-  @media (min-width: $br-small) {
+  font: 18px/1.6 $font-stack;
+  @media (max-width: $br-small) {
     font-size: 1.25rem;
   }
   @media (min-width: $br-large) {
@@ -73,32 +59,32 @@ h5 {
 }
 
 h1 {
-  font-weight: bold;
+  font-weight: normal;
   font-size: 2.4em;
   line-height: 1.02;
   @media (min-width: $br-small) {
-    font-size: 2.5em;
+    font-size: 2.8em;
   }
 }
 
 h2 {
-  font-weight: bold;
+  font-weight: normal;
   font-size: 2em;
 }
 
 h3 {
-  font-weight: bold;
+  font-weight: normal;
   font-size: 1.5em;
 }
 
 h4 {
-  font-weight: bold;
+  font-weight: normal;
   font-style: italic;
-  font-size: 1em;
+  font-size: 1.05em;
 }
 
 h5 {
-  font-weight: lighter;
+  font-weight: normal;
   font-style: italic;
   font-size: 0.8em;
 }
@@ -117,14 +103,31 @@ a {
   }
 }
 
+.no-link {
+  color: none;
+  outline: 0;
+  box-shadow: none;
+  &:hover {
+    color: none;
+    box-shadow: none;
+  }
+  &:active {
+    color: none;
+  }
+}
+
 .nav-link {
   color: $black;
   box-shadow: none;
-  font-weight: bold;
+  font-weight: 500;
+  outline: 0;
   text-transform: lowercase;
   &:hover {
     color: lighten($black, 14%);
     box-shadow: none;
+  }
+  &:focus {
+    color: lighten($black, 50%);
   }
 }
 
@@ -260,13 +263,14 @@ nav {
     p {
       margin-top: 20px;
       &:first-of-type {
-        margin-top: 70px;
+        margin-top: 30px;
       }
     }
   }
   &--main {
     @extend .hero;
-    max-width: 650px;
+    max-width: 660px;
+    margin-top: 20px;
     align-items: center;
     text-align: center;
     @media (min-width: $br-large) {
@@ -298,14 +302,14 @@ nav {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 50px 0;
+  padding: 40px 0;
   border: 1px darken(white, 6%) solid;
   background-color: darken(white, 1%);
 }
 
 .cta {
-  max-width: 250px;
-  padding: 35px 30px 30px;
+  max-width: 270px;
+  padding: 40px;
   text-align: center;
   line-height: 1.19;
   border-radius: 10px;
@@ -319,7 +323,7 @@ nav {
   }
   p {
     font-size: 0.85em;
-    margin: 5px 0;
+    margin: 15px 0;
   }
 }
 
@@ -338,25 +342,24 @@ nav {
 }
 
 .btn--cta {
-  margin-top: 10px;
+  margin-top: 6px;
   padding: 9px 33px;
   font-family: $font-stack;
   font-size: 0.75em;
   font-weight: bold;
   border-radius: 20px;
-  color: darken(white, 3%);
+  color: white;
   background-color: $logo-blue;
   border: none;
   box-shadow: 0 2px 3px rgba(128, 161, 253, 0.23);
   transition: box-shadow 0.5s ease, color 0.5s ease, background 0.5s ease, transform 0.2s ease;
   &:focus {
     outline: 0;
-    background: darken($logo-blue, 3%);
+    background: darken($logo-blue, 5%);
     transform: translateY(1px);
-    box-shadow: 0 3px 8px rgba(128, 161, 253, 0.33);
+    box-shadow: 0 3px 8px rgba(84, 127, 246, 0.33);
   }
   &:hover {
-    color: white;
     box-shadow: 0 3px 8px rgba(128, 161, 253, 0.43);
   }
   &:active {
@@ -411,7 +414,7 @@ nav {
   }
   p {
     font-size: 0.9em;
-    padding: 21px 0;
+    padding: 40px 0;
   }
   @media (min-width: $br-large) {
     padding: 12px 50px 20px;
@@ -440,7 +443,7 @@ nav {
 .field {
   label {
     margin: 0 100% 5px 0;
-    font-size: 0.7em;
+    font-size: 0.8em;
     color: $gray;
   }
   width: 300px;
@@ -463,6 +466,7 @@ textarea {
   border: 1px $light-gray solid;
   background-color: #fbfbfb;
   padding: 10px;
+  font-size: 12px;
   outline: none;
   transition: border 0.5s ease;
   &:focus {
@@ -495,6 +499,11 @@ textarea {
   }
   &__link {
     box-shadow: none;
+    outline: 0;
+    transition: transform 0.5s ease;
+    &:focus {
+      transform: scale(1.1);
+    }
   }
   &__display {
     @extend .svg--main;
@@ -552,7 +561,7 @@ textarea {
 
 .spacer {
   width: 60px;
-  margin: 15px 0;
+  margin: 25px 0;
   border-bottom: 3px $light-gray solid;
 }
 

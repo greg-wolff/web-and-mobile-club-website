@@ -12,7 +12,6 @@
   <meta name="theme-color" content="#8FACFD">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
   <title>
     <%= htmlWebpackPlugin.options.title %>
   </title>
@@ -20,7 +19,13 @@
 
 <body>
   <main>
-    <header><a class="svg--main__link" href="./"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--main"><path d="M898.25.34H266.77C119.67.34,0,120,0,267.12V898.59c0,147.09,119.67,266.77,266.77,266.77H898.25c147.1,0,266.78-119.67,266.78-266.77V267.12C1165,120,1045.35.34,898.25.34Zm-315.74,836C442.73,836.36,329,722.64,329,582.85S442.73,329.35,582.51,329.35,836,443.07,836,582.85,722.3,836.36,582.51,836.36Z"/></svg></a>
+    <header>
+      <a class="svg--main__link" href="./">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--main">
+          <path d="M898.25.34H266.77C119.67.34,0,120,0,267.12V898.59c0,147.09,119.67,266.77,266.77,266.77H898.25c147.1,0,266.78-119.67,266.78-266.77V267.12C1165,120,1045.35.34,898.25.34Zm-315.74,836C442.73,836.36,329,722.64,329,582.85S442.73,329.35,582.51,329.35,836,443.07,836,582.85,722.3,836.36,582.51,836.36Z"
+          />
+        </svg>
+      </a>
       <nav>
         <ul class="hide-mobile">
           <li><a href="./about">About</a></li>
@@ -33,7 +38,12 @@
       </nav>
       <div class="mobile-nav hidden">
         <div class="mobile-nav__wrapper">
-          <a class="svg--main__link" href="./"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--main__mobile"><path d="M898.25.34H266.77C119.67.34,0,120,0,267.12V898.59c0,147.09,119.67,266.77,266.77,266.77H898.25c147.1,0,266.78-119.67,266.78-266.77V267.12C1165,120,1045.35.34,898.25.34Zm-315.74,836C442.73,836.36,329,722.64,329,582.85S442.73,329.35,582.51,329.35,836,443.07,836,582.85,722.3,836.36,582.51,836.36Z"/></svg></a>
+          <a class="svg--main__link" href="./">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--main__mobile">
+              <path d="M898.25.34H266.77C119.67.34,0,120,0,267.12V898.59c0,147.09,119.67,266.77,266.77,266.77H898.25c147.1,0,266.78-119.67,266.78-266.77V267.12C1165,120,1045.35.34,898.25.34Zm-315.74,836C442.73,836.36,329,722.64,329,582.85S442.73,329.35,582.51,329.35,836,443.07,836,582.85,722.3,836.36,582.51,836.36Z"
+              />
+            </svg>
+          </a>
           <a href="#" class="hamburger__close">Close</a>
           <ul>
             <li class="mobile-nav__item"><a href="./about">About</a></li>
@@ -50,23 +60,37 @@
         <h1 class="fade-in">About</h1>
         <div class="fade-in spacer"></div>
         <p class="fade-in">
-          The Web and Mobile club is a collaborative club dedicated to sharing knowledge and building progressive, accessible products. We combine forward-thinking design strategies with new development technologies to create solutions for underrepresented communities.
+          The Web and Mobile club is a collaborative club dedicated to sharing knowledge and building progressive, accessible products.
+          We combine forward-thinking design strategies with new development technologies to create solutions for underrepresented
+          communities.
         </p>
         <p class="fade-in">
-          Our club's objective is to provide Santa Cruz students access to cooperatively share industry-standard tech practices, and an environment to work on software development projects. We nourish a multidisciplinary skillset with our design and development
-          teams. Members can learn about user-oriented design with resources Integer commodo dolor sed ex bibendum finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut hendrerit blandit augue, sed volutpat ipsum tristique sit amet.
+          Our club's objective is to provide Santa Cruz students access to cooperatively share industry-standard tech practices, and
+          an environment to work on software development projects. We nourish a multidisciplinary skillset with our design
+          and development teams. Members can learn about user-oriented design with resources Integer commodo dolor sed ex
+          bibendum finibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut hendrerit blandit augue, sed
+          volutpat ipsum tristique sit amet.
         </p>
       </section>
       <section class="fade-in drawing">
         <div class="boxes">
           <div class="box">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--main__display"><path d="M898.25.34H266.77C119.67.34,0,120,0,267.12V898.59c0,147.09,119.67,266.77,266.77,266.77H898.25c147.1,0,266.78-119.67,266.78-266.77V267.12C1165,120,1045.35.34,898.25.34Zm-315.74,836C442.73,836.36,329,722.64,329,582.85S442.73,329.35,582.51,329.35,836,443.07,836,582.85,722.3,836.36,582.51,836.36Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--main__display">
+              <path d="M898.25.34H266.77C119.67.34,0,120,0,267.12V898.59c0,147.09,119.67,266.77,266.77,266.77H898.25c147.1,0,266.78-119.67,266.78-266.77V267.12C1165,120,1045.35.34,898.25.34Zm-315.74,836C442.73,836.36,329,722.64,329,582.85S442.73,329.35,582.51,329.35,836,443.07,836,582.85,722.3,836.36,582.51,836.36Z"
+              />
+            </svg>
           </div>
           <div class="box">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--design__display"><path d="M898.72,1.41H266.91C119.74,1.41,0,121.15,0,268.33v631.8C0,1047.3,119.74,1167,266.91,1167H898.72c147.18,0,266.91-119.74,266.91-266.91V268.33C1165.63,121.15,1045.89,1.41,898.72,1.41ZM783.8,805.58h-402c-51.61,0-83.29-56.53-56.34-100.55l201-328.34c25.77-42.1,86.92-42.1,112.69,0L840.15,705C867.09,749,835.42,805.58,783.8,805.58Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--design__display">
+              <path d="M898.72,1.41H266.91C119.74,1.41,0,121.15,0,268.33v631.8C0,1047.3,119.74,1167,266.91,1167H898.72c147.18,0,266.91-119.74,266.91-266.91V268.33C1165.63,121.15,1045.89,1.41,898.72,1.41ZM783.8,805.58h-402c-51.61,0-83.29-56.53-56.34-100.55l201-328.34c25.77-42.1,86.92-42.1,112.69,0L840.15,705C867.09,749,835.42,805.58,783.8,805.58Z"
+              />
+            </svg>
           </div>
           <div class="box">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--develop__display"><path d="M898.37,1.42H267.25C120.24,1.42.63,121,.63,268V899.16c0,147,119.61,266.62,266.62,266.62H898.37c147,0,266.63-119.61,266.63-266.62V268C1165,121,1045.39,1.42,898.37,1.42ZM819.14,685.2A134.72,134.72,0,0,1,684.42,819.93H481.21A134.72,134.72,0,0,1,346.49,685.2V482A134.72,134.72,0,0,1,481.21,347.27H684.42A134.72,134.72,0,0,1,819.14,482Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1165 1165" class="svg--develop__display">
+              <path d="M898.37,1.42H267.25C120.24,1.42.63,121,.63,268V899.16c0,147,119.61,266.62,266.62,266.62H898.37c147,0,266.63-119.61,266.63-266.62V268C1165,121,1045.39,1.42,898.37,1.42ZM819.14,685.2A134.72,134.72,0,0,1,684.42,819.93H481.21A134.72,134.72,0,0,1,346.49,685.2V482A134.72,134.72,0,0,1,481.21,347.27H684.42A134.72,134.72,0,0,1,819.14,482Z"
+              />
+            </svg>
           </div>
         </div>
       </section>
@@ -75,8 +99,9 @@
       <section class="cta--container">
         <h3>Want to get involved?</h3>
         <div class="spacer"></div>
-        <p>We’re a collaborative group of students who are constantly educating eachother on new technologies and strategies for approaching web and mobile design and development.</p>
-        <a href="https://webandmobileclub.typeform.com/to/SJsJMB" target="_blank"><button class="btn--cta">Join Us</button></a>
+        <p>We’re a collaborative group of students who are constantly educating eachother on new technologies and strategies
+          for approaching web and mobile design and development.</p>
+        <a class="no-link" href="https://webandmobileclub.typeform.com/to/SJsJMB" target="_blank"><button class="btn--cta">Join Us</button></a>
       </section>
 
     </div>
