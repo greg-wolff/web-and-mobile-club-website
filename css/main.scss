@@ -41,7 +41,7 @@ $br-small: 640px;
 $br-medium: 900px;
 $br-large: 1500px;
 body {
-  font: 18px/1.6 $font-stack;
+  font: 17px/1.6 $font-stack;
   @media (max-width: $br-small) {
     font-size: 1.25rem;
   }
