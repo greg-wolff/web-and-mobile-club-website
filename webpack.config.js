@@ -1,7 +1,7 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-var UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+//var UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -67,6 +67,21 @@ module.exports = {
       template: './src/about.ejs'
     }),
     new HtmlWebpackPlugin({
+      title: 'The Web and Mobile Club | Process',
+      //inject: false,
+      filename: 'process.html',
+      favicon: __dirname + '/images/favicon.ico',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeScriptTypeAttributes: true,
+        removeAttributeQuotes: true,
+        useShortDoctype: true,
+        minifyCSS: true
+      },
+      template: './src/process.ejs'
+    }),
+    new HtmlWebpackPlugin({
       title: 'The Web and Mobile Club | Contact',
       //inject: false,
       filename: 'contact.html',
@@ -89,6 +104,6 @@ module.exports = {
         }
       }
     }),
-    new UglifyJSPlugin()
+    //new UglifyJSPlugin()
   ]
 }

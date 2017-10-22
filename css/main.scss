@@ -248,7 +248,7 @@ nav {
 }
 
 .hero {
-  max-width: 500px;
+  max-width: 560px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -314,17 +314,17 @@ nav {
 
 .cta {
   max-width: 270px;
-  padding: 40px;
+  padding: 40px 35px 35px;
   text-align: center;
   line-height: 1.19;
   border-radius: 10px;
   border: 1px $light-gray solid;
   background-color: white;
-  transition: box-shadow 0.5s ease, transform 0.5s ease;
+  transition: all 0.5s ease;
   &:hover {
-    //border: 1px lighten($light-gray, 2%) solid;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 35px rgba(50, 50, 93, .02), 0 5px 15px rgba(0, 0, 0, .01);
+    //transform: translateY(-3px);
+    border: 1px darken($light-gray, 3%) solid;
+    //box-shadow: 0 6px 35px rgba(50, 50, 93, .02), 0 5px 15px rgba(0, 0, 0, .01);
   }
   p {
     font-size: 0.85em;
@@ -356,7 +356,7 @@ nav {
   margin-top: 6px;
   padding: 9px 33px;
   font-family: $font-stack;
-  font-size: 0.75em;
+  font-size: 0.85em;
   border-radius: 20px;
   color: white;
   background-color: $logo-blue;
@@ -405,6 +405,10 @@ nav {
   margin-bottom: 20px;
   border: 1px $light-gray solid;
   border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #contact-form {
