@@ -267,6 +267,10 @@ nav {
         margin-top: 30px;
       }
     }
+    &__end {
+      @extend .hero--flat;
+      padding-bottom: 50px;
+    }
   }
   &--main {
     @extend .hero;
@@ -295,6 +299,12 @@ nav {
 
 .two-col {
   display: flex;
+  &__collapse {
+    @extend .two-col;
+    @media (max-width: $br-medium) {
+      flex-direction: column;
+    }
+  }
 }
 
 .full-width {
@@ -429,9 +439,20 @@ nav {
   p {
     font-size: 0.9em;
     padding: 40px 0;
+    @media (max-width: $br-medium) {
+      padding: 0 0 20px;
+    }
   }
   @media (min-width: $br-large) {
     padding: 12px 50px 20px;
+  }
+  @media (max-width: $br-medium) {
+    background-color: none;
+    border: none;
+    &:hover {
+      border: none;
+      box-shadow: unset;
+    }
   }
 }
 
@@ -463,7 +484,7 @@ nav {
   width: 300px;
   margin: 10px 0;
   @media (max-width: $br-small) {
-    width: 200px;
+    width: 80%;
   }
   @media (min-width: $br-large) {
     width: 390px;
@@ -523,7 +544,7 @@ textarea {
   }
   &__display {
     @extend .svg--main;
-    fill: lighten($logo-blue, 8%);
+    fill: #9cb5fd;
     width: 70px;
     height: 70px;
   }
@@ -537,7 +558,7 @@ textarea {
   fill: $logo-yellow;
   &__display {
     @extend .svg--design;
-    fill: lighten($logo-yellow, 8%);
+    fill : #fff1a4;
     width: 70px;
     height: 70px;
   }
@@ -551,7 +572,7 @@ textarea {
   fill: $logo-red;
   &__display {
     @extend .svg--develop;
-    fill: lighten($logo-red, 8%);
+    fill: #ff9998;
     width: 70px;
     height: 70px;
   }
@@ -581,6 +602,51 @@ textarea {
   border-bottom: 3px $light-gray solid;
 }
 
+.team {
+  margin: 90px auto;
+  text-align: center;
+  align-items: center;
+  padding: 80px 12%;
+  border-radius: 42px;
+  h1, p {
+    text-align: center;
+    margin-top: 5px !important;
+    color: #3a3232;
+  }
+  @media (max-width: $br-medium) {
+    padding: initial;
+  }
+  &--design {
+    @extend .team;
+    border: 1px solid #eaeaea;
+    //border: 3px solid rgba(255, 240, 151, .5);
+    //background-color: #fff097;
+    @media (max-width: $br-medium) {
+      border: none;
+    }
+  }
+  &--develop {
+    @extend .team;
+    border: 1px solid #eaeaea;
+    //border: 3px solid rgba(255, 137, 137, .5);
+    //background-color: #ff8b8b;
+    @media (max-width: $br-medium) {
+      border: none;
+    }
+  }
+  &--hd {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 115px;
+      height: 50px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
 .drawing {
   margin-top: 70px;
   flex: 1 100%;
@@ -589,18 +655,39 @@ textarea {
   align-self: center;
   height: 100%;
   @media (max-width: 1200px) {
+    flex: 1 60%;
+  }
+  @media (max-width: 930px) {
     display: none;
   }
 }
 
+.shuffle {
+  margin-top: 70px;
+  flex: 1 100%;
+  display: flex;
+  flex-flow: row-reverse;
+  align-self: center;
+  height: 100%;
+  @media (max-width: $br-medium) {
+    justify-content: center;
+    //margin-top: 20px;
+  }
+}
+
+
 .boxes {
-  width: 388px;
+  width: 178px;
   .box:nth-child(3) {
     height: 180px;
   }
   .box:nth-child(2) {
     height: 364px;
-    margin: -219px 0 -123px 206px;
+    margin: -219px 0 -123px -206px;
+    @media (max-width: 1200px) {
+      height: 180px;
+      margin: 15px 0;
+    }
   }
 }
 
@@ -616,6 +703,9 @@ textarea {
   &:hover {
     transform: scale(1.06);
   }
+  @media (max-width: 1200px) {
+    height: 180px;
+  }
 }
 
 .shapes {
@@ -627,7 +717,6 @@ textarea {
   position: absolute;
   overflow: hidden;
   @media (max-width: $br-small) {
-    //TODO: Figure this out
     display: none;
     height: 696px;
   }
@@ -697,6 +786,14 @@ textarea {
   }
 }
 
+#anim {
+  width: 60%;
+  opacity: .8;
+  /* @media (max-width: $br-medium) {
+    width: 50%;
+  } */
+}
+
 ::selection {
   background: $logo-yellow;
 }
@@ -711,6 +808,12 @@ textarea {
 
 @media (max-width: $br-medium) {
   .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: $br-medium) {
+  .hide-desktop {
     display: none;
   }
 }
